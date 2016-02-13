@@ -1,0 +1,17 @@
+all : lineas_1.txt lineas_2.txt
+
+lineas_1.txt : conteo.txt lineas.py
+	python lineas.py
+
+lineas_2.txt : conteo.txt lineas.py
+	python lineas.py
+
+conteo.x : conteo.c
+	gcc conteo.c -o conteo.x
+
+conteo.txt : conteo.x
+	./conteo.x > conteo.txt
+
+clean:
+
+	rm conteo.x lineas_*.txt conteo.txt
