@@ -1,0 +1,8 @@
+conteo.x : conteo.c
+	gcc conteo.c -o conteo.x
+
+conteo.txt : conteo.x
+	./conteo.x > conteo.txt
+
+lineas.txt : conteo.txt lineas.py
+	python lineas.py
